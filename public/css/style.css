@@ -1,4 +1,13 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Viga&display=swap');
+h1{
+    font-family: 'Viga', sans-serif;
+}
+
+body{
+    font-family: 'Oxygen', sans-serif;
+}
+
 .custom-section{
     margin-left: auto;
     margin-right: auto;

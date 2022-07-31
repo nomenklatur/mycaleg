@@ -7,3 +7,9 @@ Route::get('/', function () {
         'title' => 'Home'
     ]);
 });
+
+Route::get('/masuk', function(){
+    return view('login_form', [
+        'title' => 'Masuk'
+    ]);
+});

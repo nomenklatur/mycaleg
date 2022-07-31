@@ -12,7 +12,7 @@
           <a class="nav-link" href="#title">Beranda</a>
           <a class="nav-link" href="#about">Tentang Pemilu</a>
           <a class="nav-link" href="#main">Calon Legislatif</a>
-          <a class="btn btn-success ms-2" href="#" role="button">Masuk</a>
+          <a class="btn btn-success ms-2" href="/masuk" role="button">Masuk</a>
         </div>
       </div>
     </div>
