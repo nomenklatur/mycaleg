@@ -14,13 +14,14 @@ class CalegFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'identifier' => $this->faker->unique()->lexify('??????'),
-            'birthday' => $this->faker->dateTime('January 1, 2002'),
-            'vision' => $this->faker->paragraph(3,5),
-            'mission' => $this->faker->paragraph(4,6),
+            'nama' => $this->faker->name(),
+            'uri' => $this->faker->unique()->lexify(),
+            'tanggal_lahir' => $this->faker->dateTime('January 1, 2002'),
+            'visi' => $this->faker->paragraph(3,5),
+            'misi' => $this->faker->paragraph(4,6),
             'dapil_id' => mt_rand(1,3),
             'party_id' => mt_rand(1,15),
+            'criteria_id' => mt_rand(1,20),
         ];
     }
 }

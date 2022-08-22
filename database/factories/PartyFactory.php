@@ -14,8 +14,8 @@ class PartyFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->randomElement(['PKB', 'GERINDRA', 'PDIP', 'GOLKAR', 'NASDEM', 'GPI', 'BERKARYA', 'PKS', 'PPI', 'PPP', 'PAN', 'HANURA', 'DEMOKRAT', 'PBB', 'PKPI']),
-            'short_for' => null,
+            'nama' => $this->faker->unique()->randomElement(['PKB', 'GERINDRA', 'PDIP', 'GOLKAR', 'NASDEM', 'GPI', 'BERKARYA', 'PKS', 'PPI', 'PPP', 'PAN', 'HANURA', 'DEMOKRAT', 'PBB', 'PKPI']),
+            'kepanjangan' => null,
         ];
     }
 }

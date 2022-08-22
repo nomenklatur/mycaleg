@@ -15,6 +15,14 @@ class CreateCalegsTable extends Migration
     {
         Schema::create('calegs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('party_id');
+            $table->foreignId('dapil_id');
+            $table->foreignId('criteria_id');
+            $table->string('nama');
+            $table->string('uri')->unique();
+            $table->string('tanggal_lahir');
+            $table->text('visi');
+            $table->text('misi');
             $table->timestamps();
         });
     }

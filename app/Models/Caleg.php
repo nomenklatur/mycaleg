@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Caleg extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    protected $with = ['dapil', 'party', 'criteria'];
+
 }
