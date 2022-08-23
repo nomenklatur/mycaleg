@@ -17,7 +17,7 @@ class CreateCalegsTable extends Migration
             $table->id();
             $table->foreignId('party_id');
             $table->foreignId('dapil_id');
-            $table->foreignId('criteria_id');
+            $table->foreignId('criteria_id')->unique();
             $table->string('nama');
             $table->string('uri')->unique();
             $table->string('tanggal_lahir');

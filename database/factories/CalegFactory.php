@@ -21,7 +21,7 @@ class CalegFactory extends Factory
             'misi' => $this->faker->paragraph(4,6),
             'dapil_id' => mt_rand(1,3),
             'party_id' => mt_rand(1,15),
-            'criteria_id' => mt_rand(1,20),
+            'criteria_id' => $this->faker->unique()->numberBetween(0, 50),
         ];
     }
 }

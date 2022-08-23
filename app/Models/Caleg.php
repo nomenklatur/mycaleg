@@ -11,4 +11,16 @@ class Caleg extends Model
     protected $guarded = ['id'];
     protected $with = ['dapil', 'party', 'criteria'];
 
+    public function dapil(){
+        return $this->belongsTo(Dapil::class);
+    }
+
+    public function party(){
+        return $this->belongsTo(Party::class);
+    }
+
+    public function criteria(){
+        return $this->belongsTo(Criteria::class);
+    }
+
 }

@@ -9,4 +9,8 @@ class Criteria extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function caleg(){
+        return $this->hasOne(Caleg::class);
+    }
 }
