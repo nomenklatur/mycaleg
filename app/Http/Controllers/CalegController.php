@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dapil;
+use App\Models\Caleg;
+use App\Models\Party;
 
 class CalegController extends Controller
 {
-    public function dapil_show(Dapil $dapil){
-        return view('dapil',[
+    public function caleg_show(Dapil $dapil){
+        return view('dapil', [
             'title' => 'Dapil',
-            'caleg' => $dapil->caleg->load('party', 'dapil'),
+            'dapil' => $dapil->load('caleg'),
         ]);
     }
 }

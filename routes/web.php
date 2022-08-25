@@ -1,10 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CalegController;
+use App\Models\Dapil;
+use App\Models\Caleg;
+use App\Models\Party;
 
 Route::get('/', function () {
     return view('home', [
-        'title' => 'Home'
+        'title' => 'Home',
     ]);
 });
 
@@ -14,4 +18,4 @@ Route::get('/masuk', function(){
     ]);
 });
 
-Route::get('/caleg/{dapil:id}', [CalegController::class, 'dapil_show']);
+Route::get('/caleg/{dapil}', [CalegController::class, 'caleg_show']);

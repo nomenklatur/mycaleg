@@ -80,7 +80,7 @@
                 <div class="card bg-dark text-white me-2">
                     <img src="/images/dapil/1.png" class="card-img" alt="...">
                     <div class="card-img-overlay d-flex align-items-center p-1">
-                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="">Kec. Padang Hilir dan Tebing Tinggi Kota</a></p>
+                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="/caleg/1">Kec. Padang Hilir dan Tebing Tinggi Kota</a></p>
                     </div>
                   </div>
                   <div class="card bg-dark text-white me-2">
