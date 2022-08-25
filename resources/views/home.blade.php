@@ -72,8 +72,31 @@
                 </div>
             
     </section>
-    <section id="main" class="custom-section text-center mt-5">
+    <section id="main" class="custom-section text-center mt-5 mb-5">
         <h1>Calon Legislatif Anggota DPRD Kota Tebing Tinggi</h1>
+        <p>Pilih daerah pemilihan kamu</p>
+        <div class="container mt-3">
+            <div class="d-flex mx-auto">
+                <div class="card bg-dark text-white me-2">
+                    <img src="/images/dapil/1.png" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex align-items-center p-1">
+                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="">Kec. Padang Hilir dan Tebing Tinggi Kota</a></p>
+                    </div>
+                  </div>
+                  <div class="card bg-dark text-white me-2">
+                    <img src="/images/dapil/2.png" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex align-items-center p-1">
+                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="">Kec. Padang Hulu dan Bajenis</a></p>
+                    </div>
+                  </div>
+                  <div class="card bg-dark text-white me-2">
+                    <img src="/images/dapil/3.png" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex align-items-center p-1">
+                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="">Kec. Rambutan</a></p>
+                    </div>
+                  </div>
+            </div>
+        </div>
     </section>
     
 @endsection

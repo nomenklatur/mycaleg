@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dapil extends Model
+class Weight extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
-
-    public function caleg(){
-        return $this->hasMany(Caleg::class);
-    }
 }
