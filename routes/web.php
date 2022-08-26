@@ -18,4 +18,4 @@ Route::get('/masuk', function(){
     ]);
 });
 
-Route::get('/caleg/{dapil}', [CalegController::class, 'caleg_show']);
+Route::get('/caleg/{dapil:id}', [CalegController::class, 'caleg_show']);

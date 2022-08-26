@@ -12,7 +12,8 @@ class CalegController extends Controller
     public function caleg_show(Dapil $dapil){
         return view('dapil', [
             'title' => 'Dapil',
-            'dapil' => $dapil->load('caleg'),
+            'party' => Party::all(),
+            'dapil' => $dapil->caleg->load('party','dapil'),
         ]);
     }
 }

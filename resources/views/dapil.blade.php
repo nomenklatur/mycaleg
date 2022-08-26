@@ -1,27 +1,28 @@
 @extends('layout.base_layout')
-<?php 
-  $tester = $dapil->caleg;
-  $partaiA = $tester->filter(function($value){
-    return $value->party_id == 1;
-  })
-?>
+
 <!-- TODO buat perulangan untuk setiap partai, lalu filter caleg sesuai dengan id partai saat iterasi-->
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
-        <div class="col-md-3">
-          <div class="card" style="width: 18rem;">
-            <img src="/images/parties/1.svg" class="card-img-top" alt="...">
+        @foreach ($party as $item)
+        <div class="col-md-3 mb-3">
+          <div class="card" style="width: 16rem;">
+            <img src="/images/parties/{{$item->gambar}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text">{{ $dapil->kecamatan }}</p>
+              <div class="card-header">
+                <h5 class="text-center">{{$item->nama}}</h5>
+              </div>
               <ul class="list-group list-group-flush">
-                @foreach($partaiA as $caleg)
-                  <li class="list-group-item">{{$caleg->nama}}</li>
+                @foreach ($dapil as $caleg)
+                    @if ($caleg->party->nama == $item->nama)
+                        <li class="list-group-item">{{$caleg->nama}}</li>
+                    @endif
                 @endforeach
               </ul>
             </div>
           </div>
         </div>
+        @endforeach
       </div>
     </div>
 @endsection
