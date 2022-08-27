@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Dapil;
 use App\Models\Caleg;
 use App\Models\Party;
 
-class CalegController extends Controller
+class Homepage extends Controller
 {
-    public function caleg_show(Dapil $dapil){
+    public function index(){
+        return view('home', [
+            'title' => 'Beranda',
+        ]);
+    }
+
+    public function show_dapil(Dapil $dapil){
         return view('dapil', [
             'title' => 'Dapil',
             'party' => Party::all(),
@@ -17,3 +22,4 @@ class CalegController extends Controller
         ]);
     }
 }
+

@@ -1,16 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CalegController;
+use App\Http\Controllers\Homepage;
 use App\Models\Dapil;
 use App\Models\Caleg;
 use App\Models\Party;
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home',
-    ]);
-});
+//Homepage route
+Route::get('/', [Homepage::class, 'index']);
+Route::get('/dapil/{dapil:id}', [Homepage::class, 'show_dapil']);
+Route::get('/caleg', [Homepage::class, 'show_caleg']);
 
 Route::get('/masuk', function(){
     return view('login_form', [
@@ -18,4 +17,3 @@ Route::get('/masuk', function(){
     ]);
 });
 
-Route::get('/caleg/{dapil:id}', [CalegController::class, 'caleg_show']);
