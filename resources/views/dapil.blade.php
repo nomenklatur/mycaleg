@@ -1,7 +1,10 @@
 @extends('layout.base_layout')
 
-<!-- TODO buat perulangan untuk setiap partai, lalu filter caleg sesuai dengan id partai saat iterasi-->
 @section('content')
+    <div class="container mt-5 text-center">
+      <h2>Daerah Pemilihan {{ $dapil[0]->dapil->id }}</h2>
+      <h5>Kecamatan {{ $dapil[0]->dapil->kecamatan}}</h5>
+    </div>
     <div class="container mt-5">
       <div class="row">
         @foreach ($party as $item)

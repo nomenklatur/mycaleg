@@ -21,5 +21,12 @@ class Homepage extends Controller
             'dapil' => $dapil->caleg->load('party','dapil'),
         ]);
     }
+
+    public function show_caleg(){
+        return view('caleg', [
+            'title' => 'Caleg',
+            'caleg' => Caleg::orderBy('dapil_id', 'asc')->orderBy('party_id', 'asc')->get(),
+        ]);
+    }
 }
 
