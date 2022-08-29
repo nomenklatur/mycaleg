@@ -10,7 +10,7 @@
           <form action="/caleg">
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Cari.." name="cari" value="{{ request('cari')}}">
-              <button class="btn btn-outline-success" type="submit">Button</button>
+              <button class="btn btn-outline-success" type="submit">Cari</button>
             </div>
           </form>
         </div>
@@ -22,7 +22,6 @@
       <table class="table">
         <thead>
           <tr>
-            <th>#</th>
             <th>Nama</th>
             <th>Partai</th>
             <th>Daerah Pemilihan</th>
@@ -32,7 +31,6 @@
           <?php $nomor = 1 ?>
           @foreach ($caleg as $cal)
               <tr>
-                <td>{{ $nomor }}</td>
                 <td>{{ $cal->nama }}</td>
                 <td>{{ $cal->party->nama }}</td>
                 <td>{{ $cal->dapil->kecamatan}}</td>
@@ -54,4 +52,7 @@
           </div>
         </div>
     @endif
+    <div class="d-flex justify-content-center">
+      {{ $caleg->links() }}
+    </div>
 @endsection

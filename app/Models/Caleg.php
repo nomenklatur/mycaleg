@@ -23,4 +23,10 @@ class Caleg extends Model
         return $this->belongsTo(Criteria::class);
     }
 
+    public function scopeFilter($query, array $filters){
+        if(isset($filters['cari'])? $filters['cari']: false){
+             return $query->where('nama', 'like', '%'.$filters['cari'].'%');
+        }
+    }
+
 }
