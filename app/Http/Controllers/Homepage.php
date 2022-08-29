@@ -23,9 +23,13 @@ class Homepage extends Controller
     }
 
     public function show_caleg(){
+        $caleg = Caleg::orderBy('dapil_id', 'asc')->orderBy('party_id', 'asc');
+        if(request('cari')){
+            $caleg->where('nama', 'like', '%'.request('cari').'%');
+        }
         return view('caleg', [
             'title' => 'Caleg',
-            'caleg' => Caleg::orderBy('dapil_id', 'asc')->orderBy('party_id', 'asc')->get(),
+            'caleg' => $caleg->get(),
         ]);
     }
 }
