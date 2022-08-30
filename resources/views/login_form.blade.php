@@ -12,16 +12,29 @@
 
 <body>
 
-
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="/masuk" method="POST">
+			@csrf
 			<h1>Buat Akun</h1>
 			<span>gunakan e-mail kamu untuk registrasi</span>
-			<input type="text" placeholder="Nama" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Daftar</button>
+			@error('nama')
+				<label for="nama" style="color: red; font-size:11px; margin-right:auto">{{$message}}</label>
+			@enderror
+			<input type="text" placeholder="Nama" name="nama" id="nama" required />
+			@error('username')
+				<label for="username" style="color: red; font-size:11px; margin-right:auto">{{$message}}</label>
+			@enderror
+			<input type="text" placeholder="Username" name="username" id="username" required/>
+			@error('email')
+				<label for="email" style="color: red; font-size:11px; margin-right:auto">{{$message}}</label>
+			@enderror
+			<input type="email" placeholder="Email" name="email" id="email" required />
+			@error('password')
+				<label for="password" style="color: red; font-size:11px; margin-right:auto">{{$message}}</label>
+			@enderror
+			<input type="password" placeholder="Password" name="password" id="password" required/>
+			<button type="submit">Daftar</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -30,18 +43,18 @@
 			<span>gunakan akun yang terdaftar untuk masuk</span>
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
-			<button>Masuk</button>
+			<button type="submit">Masuk</button>
 		</form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Halo kamu!</h1>
+				<h1>Sudah punya akun?</h1>
 				<p>Untuk dapat menggunakan fitur tertentu silahkan masuk menggunakan akunmu</p>
 				<button class="ghost" id="signIn">Masuk</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Selamat Datang!</h1>
+				<h1>Belum punya akun?</h1>
 				<p>Daftarkan diri kamu agar dapat menggunakan fitur sistem</p>
 				<button class="ghost" id="signUp">Daftar</button>
 			</div>

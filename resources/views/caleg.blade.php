@@ -10,7 +10,7 @@
           <form action="/caleg">
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Cari.." name="cari" value="{{ request('cari')}}">
-              <button class="btn btn-outline-success" type="submit">Cari</button>
+              <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
             </div>
           </form>
         </div>

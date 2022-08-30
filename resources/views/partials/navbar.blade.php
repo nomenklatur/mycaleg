@@ -12,7 +12,7 @@
           <a class="nav-link" href="/">Beranda</a>
           <a class="nav-link" href="#">Rekomendasi Caleg</a>
           <a class="nav-link" href="/caleg">Calon Legislatif</a>
-          <a class="btn btn-success ms-2" href="/masuk" role="button">Masuk</a>
+          <a class="btn btn-success ms-2" href="/masuk" role="button"><i class="bi bi-box-arrow-in-right me-2"></i>Masuk</a>
         </div>
       </div>
     </div>
