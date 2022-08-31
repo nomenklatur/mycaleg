@@ -11,6 +11,13 @@ Route::get('/caleg', [Homepage::class, 'show_caleg']);
 
 // Authorization route
 Route::get('/masuk', [Authorization::class, 'index']);
-Route::post('/masuk', [Authorization::class, 'register']);
-Route::get('/dashboard', [Authorization::class, 'dashboard']);
+Route::post('/register', [Authorization::class, 'register']);
+Route::post('/login', [Authorization::class, 'authenticate']);
+
+// User exclusive route
+Route::get('/dashboard', function(){
+  return view('dashboard', [
+    'title' => 'Dashboard',
+  ]);
+});
 

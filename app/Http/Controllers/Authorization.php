@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -23,12 +24,22 @@ class Authorization extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         $request->session()->flash('success', 'Registrasi berhasil !');
         User::create($validatedData);
-        return redirect('/dashboard');
+        return redirect('/masuk');
     }
 
-    public function dashboard(){
-        return view('dashboard', [
-            'title' => 'Dashboard',
+    public function authenticate(Request $request){
+        $credentials = $request->validate([
+            'login_username' => 'required',
+            'login_password' => 'required',
         ]);
+
+        if (Auth::attempt(['username' => $credentials['login_username'], 'password' => $credentials['login_password']])){
+            
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard');
+        };
+
+        return back()->with('AuthError', 'Username atau Password anda salah');
+
     }
 }
