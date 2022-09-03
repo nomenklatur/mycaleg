@@ -36,10 +36,17 @@ class Authorization extends Controller
         if (Auth::attempt(['username' => $credentials['login_username'], 'password' => $credentials['login_password']])){
             
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/');
         };
 
         return back()->with('AuthError', 'Username atau Password anda salah');
 
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 }

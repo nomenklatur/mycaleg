@@ -29,4 +29,8 @@ class Caleg extends Model
         }
     }
 
+    public function getRouteKeyName(){
+        return 'uri';
+    }
+
 }

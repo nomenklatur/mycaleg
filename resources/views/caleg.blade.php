@@ -14,6 +14,11 @@
             </div>
           </form>
         </div>
+        @auth
+            <div class="col-md-2">
+              <a href="/user/calegs" class="text-decoration-none"><button type="button" class="btn btn-outline-success"><i class="bi bi-plus-circle me-1"></i>Tambah</button></a>
+            </div>
+        @endauth
       </div>
     </div>
     
@@ -25,6 +30,9 @@
             <th>Nama</th>
             <th>Partai</th>
             <th>Daerah Pemilihan</th>
+            @auth
+                <th>Aksi</th>
+            @endauth
           </tr>
         </thead>
         <tbody>
@@ -34,6 +42,9 @@
                 <td>{{ $cal->nama }}</td>
                 <td>{{ $cal->party->nama }}</td>
                 <td>{{ $cal->dapil->kecamatan}}</td>
+                @auth
+                    <td><a href="/editcaleg/{{ $cal->uri }}" class="text-decoration-none"><i class="bi bi-pen me-1"></i>Ubah</a> <a href="" class="text-decoration-none text-danger ms-2"><i class="bi bi-trash3"></i>Hapus</a></td>
+                @endauth
                 @php
                     $nomor = $nomor + 1
                 @endphp

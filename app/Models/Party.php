@@ -13,4 +13,8 @@ class Party extends Model
     public function caleg(){
         return $this->hasMany(Caleg::class);
     }
+
+    public function getRouteKeyName(){
+        return 'uri';
+    }
 }

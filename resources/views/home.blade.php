@@ -2,11 +2,11 @@
 
 @section('content')
     <section class="custom-section" id="title" style="height: 550px">
-        <div class="container d-flex flex-row mt-4 p-4">
-            <div class="container">
+        <div class="container-sm d-flex flex-row mt-4 p-4">
+            <div class="container-sm">
                 <img src="images/logo.png" alt="Logo Usu" class="img-fluid" width="400px">
             </div>
-            <div class="container text-center">
+            <div class="container-sm text-center">
                 <h3>Sistem Pendukung Keputusan Pemilihan DPRD Kota Tebing Tinggi Menggunakan Metode SAW dan Naive Bayes Classifier</h3>
                 <br>
                 <h5>Dimas Eka Putra</h5>
