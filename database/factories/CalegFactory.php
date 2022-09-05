@@ -21,7 +21,11 @@ class CalegFactory extends Factory
             'misi' => $this->faker->paragraph(4,6),
             'dapil_id' => mt_rand(1,3),
             'party_id' => mt_rand(1,15),
-            'criteria_id' => $this->faker->unique()->numberBetween(1, 50),
+            'pendidikan' => mt_rand(1,5),
+            'penghasilan' => mt_rand(1,5),
+            'keanggotaan' => mt_rand(1,4),
+            'kekayaan' => mt_rand(1,4),
+            'pengalaman' => mt_rand(1,5),
         ];
     }
 }

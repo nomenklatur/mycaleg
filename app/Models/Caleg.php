@@ -9,7 +9,7 @@ class Caleg extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    protected $with = ['dapil', 'party', 'criteria'];
+    protected $with = ['dapil', 'party'];
 
     public function dapil(){
         return $this->belongsTo(Dapil::class);
@@ -17,10 +17,6 @@ class Caleg extends Model
 
     public function party(){
         return $this->belongsTo(Party::class);
-    }
-
-    public function criteria(){
-        return $this->belongsTo(Criteria::class);
     }
 
     public function scopeFilter($query, array $filters){

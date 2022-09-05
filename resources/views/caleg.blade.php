@@ -16,7 +16,7 @@
         </div>
         @auth
             <div class="col-md-2">
-              <a href="/user/calegs" class="text-decoration-none"><button type="button" class="btn btn-outline-success"><i class="bi bi-plus-circle me-1"></i>Tambah</button></a>
+              <a href="/user/calegs/create" class="text-decoration-none"><button type="button" class="btn btn-outline-success"><i class="bi bi-plus-circle me-1"></i>Tambah</button></a>
             </div>
         @endauth
       </div>

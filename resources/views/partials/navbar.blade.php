@@ -13,12 +13,12 @@
           <a class="nav-link" href="#">Rekomendasi Caleg</a>
           <a class="nav-link" href="/caleg">Calon Legislatif</a>
           @auth
-            <li class="nav-item dropdown me-3 fw-bold">
+            <li class="nav-item dropdown me-5 fw-bold">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Halo, {{ auth()->user()->nama }}
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/addcaleg"><i class="bi bi-person-badge-fill me-1"></i>Tambah Caleg</a></li>
+                <li><a class="dropdown-item" href="/user/calegs/create"><i class="bi bi-person-badge-fill me-1"></i>Tambah Caleg</a></li>
                 <li><a class="dropdown-item" href="#"><i class="bi bi-card-heading me-1"></i>Tambah Partai</a></li>
                 <li><a class="dropdown-item" href="#"><i class="bi bi-boxes me-1"></i>Bobot</a></li>
                 <li><hr class="dropdown-divider"></li>

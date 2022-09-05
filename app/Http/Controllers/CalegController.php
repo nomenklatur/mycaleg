@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Caleg;
+use App\Models\Party;
 use Illuminate\Http\Request;
 
 class CalegController extends Controller
@@ -14,9 +15,7 @@ class CalegController extends Controller
      */
     public function index()
     {
-        return view('caleg_input', [
-            'title' => 'Input',
-        ]);
+        
     }
 
     /**
@@ -26,7 +25,10 @@ class CalegController extends Controller
      */
     public function create()
     {
-        //
+        return view('caleg_input', [
+            'title' => 'Input',
+            'partai' => Party::all()
+        ]);
     }
 
     /**
