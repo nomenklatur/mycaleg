@@ -14,7 +14,10 @@ class PartyController extends Controller
      */
     public function index()
     {
-        //
+        return view('partai', [
+            'title' => 'Partai',
+            'parties' => Party::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class PartyController extends Controller
      */
     public function create()
     {
-        //
+        return view('partai_input', [
+            'title' => 'Input'
+        ]);
     }
 
     /**
@@ -35,7 +40,11 @@ class PartyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required|max:8',
+            'kepanjangan' => 'required'
+        ]);
+        return $request;
     }
 
     /**

@@ -39,7 +39,7 @@ class CalegController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
