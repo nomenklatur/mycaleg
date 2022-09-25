@@ -5,6 +5,7 @@ use App\Http\Controllers\Homepage;
 use App\Http\Controllers\Authorization;
 use App\Http\Controllers\CalegController;
 use App\Http\Controllers\PartyController;
+use App\Http\Controllers\WeightController;
 
 //Homepage route
 Route::get('/', [Homepage::class, 'index']);
@@ -20,4 +21,5 @@ Route::post('/logout', [Authorization::class, 'logout']);
 // User exclusive route
 Route::resource('/user/calegs', CalegController::class)->middleware('auth');
 Route::resource('/user/parties', PartyController::class)->middleware('auth');
+Route::get('/user/weight', [WeightController::class, 'index'])->middleware('auth');
 
