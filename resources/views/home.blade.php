@@ -72,7 +72,7 @@
                 </div>
             
     </section>
-    <section id="main" class="custom-section text-center mt-5 mb-5">
+    <section id="main" class="custom-section text-center mt-5" style="margin-bottom: 100px">
         <h1>Calon Legislatif Anggota DPRD Kota Tebing Tinggi</h1>
         <p>Pilih daerah pemilihan kamu</p>
         <div class="container mt-3">

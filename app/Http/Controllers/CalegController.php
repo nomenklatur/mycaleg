@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Caleg;
 use App\Models\Party;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CalegController extends Controller
 {
@@ -39,7 +40,22 @@ class CalegController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'nama' => 'required|max:50',
+            'tanggal_lahir' => 'required',
+            'visi' => 'required|max:255',
+            'misi' => 'required|max:255',
+            'party_id' => 'required',
+            'dapil_id' => 'required',
+            'pendidikan' => 'required',
+            'penghasilan' => 'required',
+            'pengalaman' => 'required',
+            'keanggotaan' => 'required',
+            'kekayaan' => 'required',
+        ]);
+        $validatedData['uri'] = Str::random(40);
+        Caleg::create($validatedData);
+        return redirect('/caleg')->with('caleg_success', 'Calon legislatif berhasil ditambahkan');
     }
 
     /**

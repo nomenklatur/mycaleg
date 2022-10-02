@@ -6,6 +6,7 @@ use App\Http\Controllers\Authorization;
 use App\Http\Controllers\CalegController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\WeightController;
+use App\Http\Controllers\CalegInput;
 
 //Homepage route
 Route::get('/', [Homepage::class, 'index']);

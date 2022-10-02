@@ -1,6 +1,11 @@
 @extends('layout.base_layout')
 
 @section('content')
+    @if (session()->has('caleg_success'))
+        <div class="alert alert-success" role="alert">
+          {{ session('caleg_success') }}
+        </div>
+    @endif
     <div class="container">
       <div class="row justify-content-center mt-5 mb-3">
         <div class="col-md-4">

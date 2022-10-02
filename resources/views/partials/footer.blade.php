@@ -1,16 +1,16 @@
 <footer
-          class="text-center text-lg-start text-white mt-3 mb-0"
-          style="background-color: green"
+          class="text-center text-lg-start text-white bg-success"
+          style="position: fixed; bottom: 0; left: 0; width: 100%;"
           >
     <!-- Grid container -->
-    <div class="container p-1 pb-0 mb-0">
+    <div class="container p-1 pb-0 mb-0" style="margin-bottom: 0;">
       <!-- Section: Copyright -->
-      <section class="p-4 pt-0">
+      <section class="p-1 pt-0">
         <div class="row d-flex align-items-center">
           <!-- Grid column -->
           <div class="col-md-7 col-lg-8 text-center text-md-start">
             <!-- Copyright -->
-            <div class="p-3">
+            <div class="p-1">
               © 2022 Copyright:
               <a class="text-white" href="https://dimasekaputra.netlify.app/" target="_blank"
                  >Dimas Eka Putra</a
