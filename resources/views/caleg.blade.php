@@ -2,12 +2,25 @@
 
 @section('content')
     @if (session()->has('caleg_success'))
-        <div class="alert alert-success" role="alert">
-          {{ session('caleg_success') }}
-        </div>
+    <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 75%; top: 82%;">
+      {{ session('caleg_success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    @if (session()->has('delete_success'))
+    <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 75%; top: 82%;">
+      {{ session('delete_success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    @if (session()->has('update_success'))
+    <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 75%; top: 82%;">
+      {{ session('update_success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
     <div class="container">
-      <div class="row justify-content-center mt-5 mb-3">
+      <div class="row justify-content-center mt-3 mb-3">
         <div class="col-md-4">
           <h3>Daftar Calon Legislatif</h3>
         </div>
@@ -31,7 +44,7 @@
     <div class="container">
       <table class="table">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th>Nama</th>
             <th>Partai</th>
             <th>Daerah Pemilihan</th>
@@ -43,12 +56,19 @@
         <tbody>
           <?php $nomor = 1 ?>
           @foreach ($caleg as $cal)
-              <tr>
+              <tr class="text-center">
                 <td>{{ $cal->nama }}</td>
                 <td>{{ $cal->party->nama }}</td>
                 <td>{{ $cal->dapil->kecamatan}}</td>
                 @auth
-                    <td><a href="/editcaleg/{{ $cal->uri }}" class="text-decoration-none"><i class="bi bi-pen me-1"></i>Ubah</a> <a href="" class="text-decoration-none text-danger ms-2"><i class="bi bi-trash3"></i>Hapus</a></td>
+                    <td>
+                      <a href="user/calegs/{{ $cal->uri}}/edit" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="ubah data calon legislatif"><i class="bi bi-pen me-1"></i>Ubah</a>
+                      <form action="user/calegs/{{ $cal->uri}}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus calon legislatif ini?')" data-bs-toggle="tooltip" data-bs-placement="top" title="hapus data calon legislatif"><i class="bi bi-trash3 me-1"></i>Hapus</button>
+                      </form> 
+                    </td>
                 @endauth
                 @php
                     $nomor = $nomor + 1

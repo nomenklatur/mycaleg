@@ -41,17 +41,17 @@ class CalegController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|max:50',
+            'nama' => 'required|max:50|string',
             'tanggal_lahir' => 'required',
             'visi' => 'required|max:255',
             'misi' => 'required|max:255',
-            'party_id' => 'required',
-            'dapil_id' => 'required',
-            'pendidikan' => 'required',
-            'penghasilan' => 'required',
-            'pengalaman' => 'required',
-            'keanggotaan' => 'required',
-            'kekayaan' => 'required',
+            'party_id' => 'required|gt:0',
+            'dapil_id' => 'required|gt:0|lte:3',
+            'pendidikan' => 'required|gt:0|lte:5',
+            'penghasilan' => 'required|gt:0|lte:5',
+            'pengalaman' => 'required|gt:0|lte:5',
+            'keanggotaan' => 'required|gt:0|lte:4',
+            'kekayaan' => 'required|gt:0|lte:4',
         ]);
         $validatedData['uri'] = Str::random(40);
         Caleg::create($validatedData);
@@ -77,7 +77,11 @@ class CalegController extends Controller
      */
     public function edit(Caleg $caleg)
     {
-        //
+        return view('caleg_edit', [
+            'title' => 'Ubah',
+            'caleg' => $caleg,
+            'partai' => Party::all(),
+        ]);
     }
 
     /**
@@ -89,7 +93,21 @@ class CalegController extends Controller
      */
     public function update(Request $request, Caleg $caleg)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required|max:50|string',
+            'tanggal_lahir' => 'required',
+            'visi' => 'required|max:255',
+            'misi' => 'required|max:255',
+            'party_id' => 'required|gt:0',
+            'dapil_id' => 'required|gt:0|lte:3',
+            'pendidikan' => 'required|gt:0|lte:5',
+            'penghasilan' => 'required|gt:0|lte:5',
+            'pengalaman' => 'required|gt:0|lte:5',
+            'keanggotaan' => 'required|gt:0|lte:4',
+            'kekayaan' => 'required|gt:0|lte:4',
+        ]);
+        Caleg::where('id', $caleg->id)->update($validatedData);
+        return redirect('/caleg')->with('update_success', 'Calon legislatif berhasil diperbarui');
     }
 
     /**
@@ -100,6 +118,7 @@ class CalegController extends Controller
      */
     public function destroy(Caleg $caleg)
     {
-        //
+        Caleg::destroy($caleg->id);
+        return redirect('/caleg')->with('delete_success', 'Calon legislatif berhasil dihapus');
     }
 }
