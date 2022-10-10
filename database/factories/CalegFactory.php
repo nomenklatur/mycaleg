@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class CalegFactory extends Factory
 {
@@ -15,8 +16,8 @@ class CalegFactory extends Factory
     {
         return [
             'nama' => $this->faker->name(),
-            'uri' => $this->faker->regexify('[a-z]{7}[0-4]{3}'),
-            'tanggal_lahir' => $this->faker->dateTime('January 1, 2002'),
+            'uri' => Str::random(40),
+            'tanggal_lahir' => $this->faker->date(),
             'visi' => $this->faker->paragraph(3,5),
             'misi' => $this->faker->paragraph(4,6),
             'dapil_id' => mt_rand(1,3),

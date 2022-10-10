@@ -5,12 +5,12 @@
       <h2>Daerah Pemilihan {{ $dapil[0]->dapil->id }}</h2>
       <h5>Kecamatan {{ $dapil[0]->dapil->kecamatan}}</h5>
     </div>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
       <div class="row">
         @foreach ($party as $item)
         <div class="col-md-3 mb-3">
           <div class="card" style="width: 16rem;">
-            <img src="/images/parties/{{$item->gambar}}" class="card-img-top" alt="...">
+            <img src="/images/parties/{{$item->gambar}}" class="card-img-top" alt="..." style="width:100%; height:140px;">
             <div class="card-body">
               <div class="card-header">
                 <h5 class="text-center">{{$item->nama}}</h5>

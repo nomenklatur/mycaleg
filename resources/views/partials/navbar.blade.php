@@ -20,7 +20,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/user/calegs/create"><i class="bi bi-person-badge-fill me-1"></i>Tambah Caleg</a></li>
                 <li><a class="dropdown-item" href="/user/parties"><i class="bi bi-card-heading me-1"></i>Tambah Partai</a></li>
-                <li><a class="dropdown-item" href="#"><i class="bi bi-boxes me-1"></i>Bobot</a></li>
+                <li><a class="dropdown-item" href="/user/weight"><i class="bi bi-boxes me-1"></i>Bobot</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
                   <form action="/logout" method="POST">

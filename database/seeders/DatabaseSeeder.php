@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use App\Models\Caleg;
 use App\Models\Party;
@@ -19,7 +20,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Caleg::factory(50)->create();
-        Party::factory(15)->create();
 
         DB::table('dapils')->insert([
             'kecamatan' => 'Padang Hilir dan Tebing Tinggi Kota',
@@ -39,6 +39,111 @@ class DatabaseSeeder extends Seeder
             'kekayaan' => 5,
             'pengalaman' => 25,
             'keanggotaan' => 20,
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PKB',
+            'kepanjangan' => 'Partai Kebangkitan Bangsa',
+            'uri' => Str::random(50),
+            'gambar' => 'pkb.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'BERKARYA',
+            'kepanjangan' => 'Partai Berkarya',
+            'uri' => Str::random(50),
+            'gambar' => 'berkarya.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'DEMOKRAT',
+            'kepanjangan' => 'Partai Demokrat',
+            'uri' => Str::random(50),
+            'gambar' => 'demokrat.png'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'GARUDA',
+            'kepanjangan' => 'Partai Gerakan Perubahan Indonesia',
+            'uri' => Str::random(50),
+            'gambar' => 'garuda.png'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'GERINDRA',
+            'kepanjangan' => 'Partai Gerakan Indonesia Raya',
+            'uri' => Str::random(50),
+            'gambar' => 'gerindra.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'GOLKAR',
+            'kepanjangan' => 'Partai Golongan Karya',
+            'uri' => Str::random(50),
+            'gambar' => 'golkar.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'HANURA',
+            'kepanjangan' => 'Partai Hati Nurani Rakyat',
+            'uri' => Str::random(50),
+            'gambar' => 'hanura.png'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'NASDEM',
+            'kepanjangan' => 'Partai Nasional Demokratis',
+            'uri' => Str::random(50),
+            'gambar' => 'nasdem.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PAN',
+            'kepanjangan' => 'Partai Amanat Nasional',
+            'uri' => Str::random(50),
+            'gambar' => 'pan.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PBB',
+            'kepanjangan' => 'Partai Bulan Bintang',
+            'uri' => Str::random(50),
+            'gambar' => 'pbb.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PDIP',
+            'kepanjangan' => 'Partai Demokrasi Indonesia Perjuangan',
+            'uri' => Str::random(50),
+            'gambar' => 'pdip.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PERINDO',
+            'kepanjangan' => 'Partai Persatuan Indonesia',
+            'uri' => Str::random(50),
+            'gambar' => 'perindo.png'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PKPI',
+            'kepanjangan' => 'Partai Keadilan dan Persatuan Indonesia',
+            'uri' => Str::random(50),
+            'gambar' => 'pkpi.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PKS',
+            'kepanjangan' => 'Partai Keadilan Sosial',
+            'uri' => Str::random(50),
+            'gambar' => 'pks.jpg'
+        ]);
+
+        DB::table('parties')->insert([
+            'nama' => 'PPP',
+            'kepanjangan' => 'Partai Persatuan Pembangunan',
+            'uri' => Str::random(50),
+            'gambar' => 'ppp.png'
         ]);
     }
 }
