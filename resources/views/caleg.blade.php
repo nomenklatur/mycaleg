@@ -3,19 +3,19 @@
 @section('content')
     @if (session()->has('caleg_success'))
     <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 75%; top: 82%;">
-      {{ session('caleg_success') }}
+      <i class="bi bi-check-circle me-2"></i>{{ session('caleg_success') }}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
     @if (session()->has('delete_success'))
     <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 75%; top: 82%;">
-      {{ session('delete_success') }}
+      <i class="bi bi-trash me-2"></i>{{ session('delete_success') }}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
     @if (session()->has('update_success'))
     <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 75%; top: 82%;">
-      {{ session('update_success') }}
+      <i class="bi bi-pen me-2"></i>{{ session('update_success') }}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif

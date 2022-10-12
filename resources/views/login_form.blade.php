@@ -14,13 +14,13 @@
 <body>
 	@if (session()->has('success'))
 	<div class="alert alert-success alert-dismissible fade show" role="alert">
-		{{ session('success') }}
+		<i class="bi bi-check-circle me-2"></i>{{ session('success') }}
 		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
 @endif
 @if (session()->has('AuthError'))
 	<div class="alert alert-danger alert-dismissible fade show" role="alert">
-		{{ session('AuthError') }}
+		<i class="bi bi-exclamation-diamond me-2"></i>{{ session('AuthError') }}
 		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
 @endif

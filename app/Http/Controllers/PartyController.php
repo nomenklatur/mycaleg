@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Party;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PartyController extends Controller
 {
@@ -40,11 +41,20 @@ class PartyController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required|max:8',
-            'kepanjangan' => 'required'
+        $validatedData = $request->validate([
+            'nama' => 'required|max:10',
+            'kepanjangan' => 'required|max:50',
+            'gambar' => 'image|file|max:1024'
         ]);
-        return $request;
+
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('logo-partai');
+        }
+
+        $validatedData['uri'] = Str::random(50);
+
+        Party::create($validatedData);
+        return redirect('/user/parties')->with('partai_success', 'Partai berhasil ditambahkan');
     }
 
     /**
@@ -66,7 +76,10 @@ class PartyController extends Controller
      */
     public function edit(Party $party)
     {
-        //
+        return view('partai_edit', [
+            'title' => 'Ubah',
+            'partai' => $party
+        ]);
     }
 
     /**

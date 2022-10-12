@@ -4,7 +4,7 @@
     <div class="container mt-3 mb-5">
       <div class="row">
         <div class="col-lg-6 mx-auto">
-          <form action="/user/calegs/{{$caleg->uri}}" method="POST">
+          <form action="/user/calegs/{{$caleg->uri}}" method="POST" enctype="multipart/form-data">
             @method('put')
             @csrf
             <fieldset>
@@ -22,6 +22,27 @@
                 <label for="tanggal_lahir" class="form-label">Tanggal lahir</label>
                 <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" id="tanggal_lahir" name="tanggal_lahir" value="{{$caleg->tanggal_lahir}}">
                 @error('tanggal_lahir')
+                  <div class="invalid-feedback">
+                    {{ $message }}  
+                  </div>                   
+                @enderror
+              </div>
+              <div class="mb-3">
+                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                <select class="form-select" name="jenis_kelamin">
+                  <option value="L" @if ('L' == $caleg->jenis_kelamin) selected @endif>Laki-laki</option>
+                  <option value="P" @if ('P' == $caleg->jenis_kelamin) selected @endif>Perempuan</option>
+                </select>
+                @error('jenis_kelamin')
+                  <div class="invalid-feedback">
+                    {{ $message }}  
+                  </div>                   
+                @enderror
+              </div>
+              <div class="mb-3">
+                <label for="gambar" class="form-label">Foto Calon Legislatif</label>
+                <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar">
+                @error('gambar')
                   <div class="invalid-feedback">
                     {{ $message }}  
                   </div>                   

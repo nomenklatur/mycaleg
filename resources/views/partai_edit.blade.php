@@ -7,14 +7,14 @@
           <form action="/user/parties" method="post" enctype="multipart/form-data">
             @csrf
             <fieldset>
-              <legend>Input informasi partai</legend>
+              <legend>Ubah informasi partai</legend>
               <div class="mb-3">
                 <label for="nama" class="form-label">Nama singkat partai</label>
-                <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama">
+                <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ $partai->nama }}">
               </div>
               <div class="mb-3">
                 <label for="kepanjangan" class="form-label">Nama lengkap partai</label>
-                <input type="text" class="form-control @error('kepanjangan') is-invalid @enderror" id="kepanjangan" name="kepanjangan">
+                <input type="text" class="form-control @error('kepanjangan') is-invalid @enderror" id="kepanjangan" name="kepanjangan" value="{{ $partai->kepanjangan}}">
               </div>
               <div class="mb-3">
                 <label for="gambar" class="form-label">Logo partai</label>

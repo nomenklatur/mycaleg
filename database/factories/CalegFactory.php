@@ -18,6 +18,7 @@ class CalegFactory extends Factory
             'nama' => $this->faker->name(),
             'uri' => Str::random(40),
             'tanggal_lahir' => $this->faker->date(),
+            'jenis_kelamin' => $this->faker->randomElement(['L', 'P']),
             'visi' => $this->faker->paragraph(3,5),
             'misi' => $this->faker->paragraph(4,6),
             'dapil_id' => mt_rand(1,3),

@@ -20,6 +20,8 @@ class CreateCalegsTable extends Migration
             $table->string('nama');
             $table->string('uri')->unique();
             $table->string('tanggal_lahir');
+            $table->string('jenis_kelamin');
+            $table->string('gambar')->nullable();
             $table->text('visi');
             $table->text('misi');
             $table->integer('pendidikan');

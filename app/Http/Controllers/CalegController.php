@@ -43,8 +43,10 @@ class CalegController extends Controller
         $validatedData = $request->validate([
             'nama' => 'required|max:50|string',
             'tanggal_lahir' => 'required',
-            'visi' => 'required|max:255',
-            'misi' => 'required|max:255',
+            'jenis_kelamin' => 'required|max:1|min:1',
+            'gambar' => 'image|file|max:1024',
+            'visi' => 'required|max:500',
+            'misi' => 'required|max:500',
             'party_id' => 'required|gt:0',
             'dapil_id' => 'required|gt:0|lte:3',
             'pendidikan' => 'required|gt:0|lte:5',
@@ -53,6 +55,11 @@ class CalegController extends Controller
             'keanggotaan' => 'required|gt:0|lte:4',
             'kekayaan' => 'required|gt:0|lte:4',
         ]);
+
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('foto-caleg');
+        }
+
         $validatedData['uri'] = Str::random(40);
         Caleg::create($validatedData);
         return redirect('/caleg')->with('caleg_success', 'Calon legislatif berhasil ditambahkan');
@@ -96,6 +103,8 @@ class CalegController extends Controller
         $validatedData = $request->validate([
             'nama' => 'required|max:50|string',
             'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required|max:1|min:1',
+            'gambar' => 'image|file|max:1024',
             'visi' => 'required|max:255',
             'misi' => 'required|max:255',
             'party_id' => 'required|gt:0',
@@ -106,6 +115,11 @@ class CalegController extends Controller
             'keanggotaan' => 'required|gt:0|lte:4',
             'kekayaan' => 'required|gt:0|lte:4',
         ]);
+
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('foto-caleg');
+        }
+        
         Caleg::where('id', $caleg->id)->update($validatedData);
         return redirect('/caleg')->with('update_success', 'Calon legislatif berhasil diperbarui');
     }
