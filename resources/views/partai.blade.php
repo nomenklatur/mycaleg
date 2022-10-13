@@ -2,7 +2,7 @@
 
 @section('content')
       @if (session()->has('partai_success'))
-        <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 75%; top: 20%;">
+        <div class="alert alert-success alert-dismissible fade show position-absolute" role="alert" style="left: 60%; top: 15%;">
           <i class="bi bi-check-circle me-2"></i>{{ session('partai_success') }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -41,7 +41,7 @@
                   <form action="/user/parties/{{ $partai->uri }}" method="post" class="d-inline">
                     @method('delete')
                     @csrf
-                    <button type="submit" class="badge rounded-pill bg-danger fs-6" onclick="return confirm('Anda yakin akan menghapus partai ini?')><i class="bi bi-trash3"></i>Hapus</button>
+                    <button type="submit" class="badge rounded-pill bg-danger fs-6" onclick="return confirm('Anda yakin akan menghapus partai ini?')"><i class="bi bi-trash3"></i>Hapus</button>
                   </form>
                 </div>
               </div>

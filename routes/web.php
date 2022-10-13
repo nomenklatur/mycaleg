@@ -22,3 +22,5 @@ Route::post('/logout', [Authorization::class, 'logout']);
 Route::resource('/user/calegs', CalegController::class)->middleware('auth');
 Route::resource('/user/parties', PartyController::class)->middleware('auth');
 Route::get('/user/weight', [WeightController::class, 'index'])->middleware('auth');
+
+// DSS function routes

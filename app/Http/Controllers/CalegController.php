@@ -6,6 +6,7 @@ use App\Models\Caleg;
 use App\Models\Party;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class CalegController extends Controller
 {
@@ -116,7 +117,10 @@ class CalegController extends Controller
             'kekayaan' => 'required|gt:0|lte:4',
         ]);
 
-        if ($request->file('gambar')) {
+        if ($request->hasFile('gambar')) {
+            if($caleg->gambar != null){
+                Storage::delete($caleg->gambar);
+            }
             $validatedData['gambar'] = $request->file('gambar')->store('foto-caleg');
         }
         
@@ -132,6 +136,7 @@ class CalegController extends Controller
      */
     public function destroy(Caleg $caleg)
     {
+        Storage::delete($caleg->gambar);
         Caleg::destroy($caleg->id);
         return redirect('/caleg')->with('delete_success', 'Calon legislatif berhasil dihapus');
     }

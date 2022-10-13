@@ -4,7 +4,8 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-lg-6 mx-auto">
-          <form action="/user/parties" method="post" enctype="multipart/form-data">
+          <form action="/user/parties/{{$partai->uri}}" method="post" enctype="multipart/form-data">
+            @method('put')
             @csrf
             <fieldset>
               <legend>Ubah informasi partai</legend>
