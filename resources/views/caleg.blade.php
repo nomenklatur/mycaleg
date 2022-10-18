@@ -42,7 +42,7 @@
     
     @if ($caleg->count())
     <div class="container">
-      <table class="table">
+      <table class="table table-light">
         <thead>
           <tr class="text-center">
             <th>Nama</th>

@@ -5,6 +5,8 @@ h1{
 }
 
 body{
+    background-image: url('/images/background-reduced.jpg');
+    background-size: contain;
     font-family: 'Oxygen', sans-serif;
     font-size: 14px;
 }

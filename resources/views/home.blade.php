@@ -80,19 +80,19 @@
                 <div class="card bg-dark text-white me-2">
                     <img src="/images/dapil/1.png" class="card-img" alt="...">
                     <div class="card-img-overlay d-flex align-items-center p-1">
-                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="/dapil/1">Kec. Padang Hilir dan Tebing Tinggi Kota</a></p>
+                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="/dapil/1">Daerah Pemilihan 1</a></p>
                     </div>
                   </div>
                   <div class="card bg-dark text-white me-2">
                     <img src="/images/dapil/2.png" class="card-img" alt="...">
                     <div class="card-img-overlay d-flex align-items-center p-1">
-                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="/dapil/2">Kec. Padang Hulu dan Bajenis</a></p>
+                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="/dapil/2">Daerah Pemilihan 2</a></p>
                     </div>
                   </div>
                   <div class="card bg-dark text-white me-2">
                     <img src="/images/dapil/3.png" class="card-img" alt="...">
                     <div class="card-img-overlay d-flex align-items-center p-1">
-                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="/dapil/3">Kec. Rambutan</a></p>
+                      <p class="card-title text-center flex-fill p-4" style="background-color: rgba(0,0,0,0.7)"><a class="text-decoration-none text-light" href="/dapil/3">Daerah Pemilihan 3</a></p>
                     </div>
                   </div>
             </div>

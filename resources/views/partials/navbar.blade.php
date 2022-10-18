@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto" >
           <a class="nav-link" href="/">Beranda</a>
-          <a class="nav-link" href="#">Rekomendasi Caleg</a>
+          <a class="nav-link" href="/rekomendasi">Rekomendasi Caleg</a>
           <a class="nav-link" href="/caleg">Calon Legislatif</a>
           @auth
             <li class="nav-item dropdown me-5 fw-bold">

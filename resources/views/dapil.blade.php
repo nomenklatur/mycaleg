@@ -10,7 +10,7 @@
         @foreach ($party as $item)
         <div class="col-md-3 mb-3">
           <div class="card" style="width: 16rem;">
-            <img src="/images/parties/{{$item->gambar}}" class="card-img-top" alt="..." style="width:100%; height:140px;">
+            <img src="images/party.png" class="card-img-top" alt="..." style="width:100%; height:140px;">
             <div class="card-body">
               <div class="card-header">
                 <h5 class="text-center">{{$item->nama}}</h5>
