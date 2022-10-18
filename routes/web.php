@@ -26,3 +26,4 @@ Route::get('/user/weight', [WeightController::class, 'index'])->middleware('auth
 
 // DSS function routes
 Route::get('/rekomendasi', [DSSController::class, 'index']);
+Route::get('/rekomendasi/{dapil:id}', [DSSController::class, 'saw']);

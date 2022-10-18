@@ -30,11 +30,7 @@
         @foreach ($parties as $partai)
             <div class="col-lg-3 p-2">
               <div class="card mb-3 shadow" style="width: 13rem;">
-                @if ($partai->gambar)
-                  <img src="{{ asset('storage/'.$partai->gambar)}}" class="card-img-top" style="width: 100%; height:120px;">
-                @else
-                  <img src="/images/team.svg" class="card-img-top" style="width: 100%; height:120px;">
-                @endif
+                  <img src="@if ($partai->gambar != null) {{ asset('storage/'.$partai->gambar) }} @else /images/party.png @endif" class="card-img-top" style="width: 100%; height:120px;">
                 <div class="card-body text-center">
                   <h5 class="card-title text-bold mb-4"><b>{{ $partai->nama}}</b></h5>
                   <button class="badge rounded-pill bg-warning fs-6"><a href="/user/parties/{{ $partai->uri }}/edit" class="text-decoration-none text-dark"><i class="bi bi-pen me-1"></i>Ubah</a></button>
