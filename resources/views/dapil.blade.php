@@ -9,7 +9,7 @@
       <div class="row">
         @foreach ($party as $item)
         <div class="col-md-3 mb-3">
-          <div class="card" style="width: 16rem;">
+          <div class="card border-dark rounded" style="width: 16rem;">
             <img src="@if ($item->gambar != null) {{ asset('storage/'.$item->gambar) }} @else /images/party.png @endif" class="card-img-top" alt="..." style="width:100%; height:140px;">
             <div class="card-body">
               <div class="card-header">

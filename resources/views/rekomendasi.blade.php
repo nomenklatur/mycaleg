@@ -1,37 +1,47 @@
 @extends('layout.base_layout')
 
 @section('content')
-  <div class="container">
-    <p>nilai maksimum pendidikan : {{$max_pend}}</p>
-    <p>nilai maksimum pengalaman : {{$max_peng}}</p>
-    <p>nilai maksimum penghasilan : {{$max_phsl}}</p>
-    <p>nilai maksimum kekayaan : {{$max_keka}}</p>
-    <p>nilai maksimum keanggotaan : {{$max_kean}}</p>
-    <div class="row mt-3">
-      <div class="col-md-6">
-        <table class="table">
-          <tr>
-            <th>nama</th>
-            <th>pendidikan</th>
-            <th>pengalaman</th>
-            <th>penghasilan</th>
-            <th>kekayaan</th>
-            <th>keanggotaan</th>
-            <th>Nilai preferensi</th>
-          </tr>
-          @foreach ($ternormalisasi as $item)
-          <tr>
-            <th>{{$item['nama']}}</th>
-            <th>{{$item['norm_pendidikan']}}</th>
-            <th>{{$item['norm_pengalaman']}}</th>
-            <th>{{$item['norm_penghasilan']}}</th>
-            <th>{{$item['norm_kekayaan']}}</th>
-            <th>{{$item['norm_keanggotaan']}}</th>
-            <th>{{$item['preference']}}</th>
-          </tr>             
-          @endforeach
-        </table>
+  <div class="container mt-3 mb-3">
+    <div class="row text-center">
+      <h1>Rekomendasi Calon Legislatif</h1>
+      <h5>{{ $dapil }}</h5>
+    </div>
+  </div>
+  <div class="container mt-3 mb-3">
+    <div class="row justify-content-center">
+      @for ($i = 0; $i < 5; $i++)
+        <div class="card border-dark m-3" style="width: 12rem;">
+          <img src="@if ($result[$i]['gambar'] === NULL) @if($result[$i]['jenis_kelamin'] == 'L') /images/male.png @else /images/female.png @endif @else {{asset('storage/'.$result[0]['gambar'])}}  @endif" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title fs-6">{{$result[$i]['nama']}}</h5>
+            <p class="card-subtitle mb-2 text-muted">{{$result[$i]['partai']}}</p>
+            <a href="#" class="btn btn-info btn-sm">Lihat <i class="fa-regular fa-eye ms-1"></i></a>
+          </div>
+        </div>
+      @endfor
+    </div>  
+    <div class="container mt-3 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card border-success">
+            <table class="table text-center">
+              <tr>
+                <th>Peringkat</th>
+                <th>Nama</th>
+                <th>Partai</th>
+                <th>Nilai Preferensi</th>
+              </tr>
+              @foreach ($result as $item)
+              <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item['nama']}}</td>
+                <td>{{$item['partai']}}</td>
+                <td>{{$item['preference']}}</td>
+              </tr> 
+              @endforeach
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-  </div>    
 @endsection
