@@ -15,7 +15,7 @@ class Homepage extends Controller
     }
 
     public function show_dapil(Dapil $dapil){
-        return view('dapil', [
+        return view('caleg/caleg_by_dapil', [
             'title' => 'Dapil',
             'party' => Party::all(),
             'dapil' => $dapil->caleg->load('party','dapil'),
@@ -25,7 +25,7 @@ class Homepage extends Controller
     public function show_caleg(){
 
         $caleg = Caleg::orderBy('dapil_id', 'asc')->orderBy('party_id', 'asc');
-        return view('caleg', [
+        return view('caleg/caleg', [
             'title' => 'Caleg',
             'caleg' => $caleg->filter(request(['cari']))->paginate(7)->withQueryString(),
         ]);

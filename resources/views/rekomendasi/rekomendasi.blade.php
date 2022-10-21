@@ -10,7 +10,7 @@
   <div class="container mt-3 mb-3">
     <div class="row justify-content-center">
       @for ($i = 0; $i < 5; $i++)
-        <div class="card border-dark m-3" style="width: 12rem;">
+        <div class="card border-success m-3 shadow" style="width: 12rem;">
           <img src="@if ($result[$i]['gambar'] === NULL) @if($result[$i]['jenis_kelamin'] == 'L') /images/male.png @else /images/female.png @endif @else {{asset('storage/'.$result[0]['gambar'])}}  @endif" class="card-img-top" alt="...">
           <div class="card-body text-center">
             <h5 class="card-title fs-6">{{$result[$i]['nama']}}</h5>
@@ -23,14 +23,16 @@
     <div class="container mt-3 mb-5">
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <div class="card border-success">
+          <div class="card border-success shadow">
             <table class="table text-center">
-              <tr>
-                <th>Peringkat</th>
-                <th>Nama</th>
-                <th>Partai</th>
-                <th>Nilai Preferensi</th>
-              </tr>
+              <thead>
+                <tr>
+                  <th>Peringkat</th>
+                  <th>Nama</th>
+                  <th>Partai</th>
+                  <th>Nilai Preferensi</th>
+                </tr>
+              </thead>
               @foreach ($result as $item)
               <tr>
                 <td>{{$loop->iteration}}</td>

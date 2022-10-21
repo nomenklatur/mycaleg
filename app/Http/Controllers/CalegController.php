@@ -27,7 +27,7 @@ class CalegController extends Controller
      */
     public function create()
     {
-        return view('caleg_input', [
+        return view('caleg/caleg_input', [
             'title' => 'Input',
             'partai' => Party::all()
         ]);
@@ -85,7 +85,7 @@ class CalegController extends Controller
      */
     public function edit(Caleg $caleg)
     {
-        return view('caleg_edit', [
+        return view('caleg/caleg_edit', [
             'title' => 'Ubah',
             'caleg' => $caleg,
             'partai' => Party::all(),

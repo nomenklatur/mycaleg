@@ -3,8 +3,8 @@
 @section('content')
     <div class="container mt-4">
       <div class="row justify-content-center">
-        <div class="col-md-6">
-          <table class="table">
+        <div class="col-md-6 card shadow">
+          <table class="table text-center">
             <tr>
               <th>Kriteria</th>
               <th>Bobot Kriteria</th>

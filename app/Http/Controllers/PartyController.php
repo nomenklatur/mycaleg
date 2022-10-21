@@ -29,7 +29,7 @@ class PartyController extends Controller
      */
     public function create()
     {
-        return view('partai_input', [
+        return view('partai/partai_input', [
             'title' => 'Input'
         ]);
     }
@@ -77,7 +77,7 @@ class PartyController extends Controller
      */
     public function edit(Party $party)
     {
-        return view('partai_edit', [
+        return view('partai/partai_edit', [
             'title' => 'Ubah',
             'partai' => $party
         ]);

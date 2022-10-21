@@ -33,14 +33,6 @@ class DatabaseSeeder extends Seeder
             'kecamatan' => 'Rambutan',
         ]);
 
-        DB::table('weights')->insert([
-            'pendidikan' => 40,
-            'penghasilan' => 10,
-            'kekayaan' => 5,
-            'pengalaman' => 25,
-            'keanggotaan' => 20,
-        ]);
-
         DB::table('parties')->insert([
             'nama' => 'PKB',
             'kepanjangan' => 'Partai Kebangkitan Bangsa',

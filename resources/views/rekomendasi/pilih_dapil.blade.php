@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row mt-3">
         <div class="col-sm-6">
-          <div class="card">
+          <div class="card shadow">
             <div class="card-header bg-success">
             </div>
             <div class="card-body">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card">
+          <div class="card shadow">
             <div class="card-header bg-success">
             </div>
             <div class="card-body">
@@ -31,7 +31,7 @@
       </div>
       <div class="row mt-3 justify-content-center">
         <div class="col-sm-6">
-          <div class="card">
+          <div class="card shadow">
             <div class="card-header bg-success">
             </div>
             <div class="card-body">

@@ -22,8 +22,9 @@ Route::post('/logout', [Authorization::class, 'logout']);
 // User exclusive route
 Route::resource('/user/calegs', CalegController::class)->middleware('auth');
 Route::resource('/user/parties', PartyController::class)->middleware('auth');
-Route::get('/user/weight', [WeightController::class, 'index'])->middleware('auth');
+Route::get('/user/weight', function(){ return view('rekomendasi/bobot', ['title' => 'Bobot']);})->middleware('auth');
 
 // DSS function routes
 Route::get('/rekomendasi', [DSSController::class, 'index']);
 Route::get('/rekomendasi/{dapil:id}', [DSSController::class, 'saw']);
+Route::get('/rekomendasi/{caleg:uri}/detail', [DSSController::class, 'nbc']);
