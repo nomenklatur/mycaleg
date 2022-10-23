@@ -1,7 +1,7 @@
 @extends('layout.base_layout')
 
 @section('content')
-    <div class="container mt-3">
+    <div class="container mt-3 mb-5">
       <div class="row">
         <div class="col-md-12">
           <div class="card mb-3 border-dark shadow rounded" style="max-width: 100%;">

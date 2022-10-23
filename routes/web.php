@@ -5,7 +5,7 @@ use App\Http\Controllers\Homepage;
 use App\Http\Controllers\Authorization;
 use App\Http\Controllers\CalegController;
 use App\Http\Controllers\PartyController;
-use App\Http\Controllers\WeightController;
+use App\Http\Controllers\Penganalisa;
 use App\Http\Controllers\DSSController;
 
 //Homepage route
@@ -28,3 +28,7 @@ Route::get('/user/weight', function(){ return view('rekomendasi/bobot', ['title'
 Route::get('/rekomendasi', [DSSController::class, 'index']);
 Route::get('/rekomendasi/{dapil:id}', [DSSController::class, 'reccomend']);
 Route::get('/rekomendasi/{caleg:uri}/detail', [DSSController::class, 'show_detail']);
+
+//Analyze calculation routes
+Route::get('/analisa/{dapil:id}/saw', [Penganalisa::class, 'show_saw']);
+Route::get('/analisa/{caleg:uri}/nbc', [Penganalisa::class, 'show_nbc']);
