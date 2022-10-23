@@ -26,5 +26,5 @@ Route::get('/user/weight', function(){ return view('rekomendasi/bobot', ['title'
 
 // DSS function routes
 Route::get('/rekomendasi', [DSSController::class, 'index']);
-Route::get('/rekomendasi/{dapil:id}', [DSSController::class, 'saw']);
-Route::get('/rekomendasi/{caleg:uri}/detail', [DSSController::class, 'nbc']);
+Route::get('/rekomendasi/{dapil:id}', [DSSController::class, 'reccomend']);
+Route::get('/rekomendasi/{caleg:uri}/detail', [DSSController::class, 'show_detail']);
