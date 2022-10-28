@@ -25,13 +25,14 @@
       <div class="row justify-content-center">
         <div class="col-md-12">
           <div class="card border-success shadow">
-            <table class="table text-center fs-5" style="width: 100%">
+            <table class="table text-center" style="width: 100%">
               <thead>
                 <tr>
                   <th>Peringkat</th>
                   <th>Nama</th>
                   <th>Partai</th>
                   <th>Nilai Preferensi</th>
+                  <th>Klasifikasi</th>
                 </tr>
               </thead>
               @foreach ($result as $item)
@@ -40,6 +41,13 @@
                 <td><a href="/rekomendasi/{{$item['uri']}}/detail" class="text-decoration-none">{{$item['nama']}}</a></td>
                 <td>{{$item['partai']}}</td>
                 <td>{{$item['preference']}} / 100</td>
+                <td>
+                  @if ($item['probability'][0] > $item['probability'][1])
+                      <span class="badge bg-success">Terpilih</span>
+                  @else
+                      <span class="badge bg-danger">Tidak Terpilih</span>
+                  @endif
+                </td>
               </tr> 
               @endforeach
             </table>

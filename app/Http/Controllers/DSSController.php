@@ -47,22 +47,26 @@ class DSSController extends Controller
         $jumlah_ya =  count($dataTraining->where('terpilih', 'ya'));
         $jumlah_tidak = count($dataTraining->where('terpilih', 'tidak'));
         $p_partai_ya = count($dataTraining->where('terpilih', 'ya')->where('partai', $caleg->party_id ));
+        $p_kelamin_ya = count($dataTraining->where('terpilih', 'ya')->where('jenis_kelamin', $caleg->jenis_kelamin));
+        $p_kelamin_tidak = count($dataTraining->where('terpilih', 'tidak')->where('jenis_kelamin', $caleg->jenis_kelamin));
+        $p_pendidikan_ya = count($dataTraining->where('terpilih', 'ya')->where('pendidikan', $caleg->pendidikan));
+        $p_pendidikan_tidak = count($dataTraining->where('terpilih', 'tidak')->where('pendidikan', $caleg->pendidikan));
         $p_partai_tidak = count($dataTraining->where('terpilih', 'tidak')->where('partai', $caleg->party_id ));
         $p_dapil_ya = count($dataTraining->where('terpilih', 'ya')->where('iddapil', $caleg->dapil_id ));
         $p_dapil_tidak = count($dataTraining->where('terpilih', 'tidak')->where('iddapil', $caleg->dapil_id ));
         
-        if($p_partai_ya == 0 || $p_dapil_ya == 0){
+        if($p_partai_ya == 0 || $p_dapil_ya == 0 || $p_kelamin_ya == 0 || $p_pendidikan_ya == 0 || $p_pendidikan_tidak == 0){
             $partai_values = count($dataTraining->unique('partai'));
             $dapil_values = count($dataTraining->unique('iddapil'));
-            $p_terpilih = (($p_partai_ya + 1) / ($jumlah_ya + $partai_values)) * (($p_dapil_ya + 1) / ($jumlah_ya + $dapil_values)) * ($jumlah_ya / $jumlah);
-            $p_tidak_terpilih = (($p_partai_tidak + 1) / ($jumlah_tidak + $partai_values)) * (($p_dapil_tidak + 1) / ($jumlah_tidak + $dapil_values)) * ($jumlah_tidak / $jumlah);
+            $p_terpilih = (($p_partai_ya + 1) / ($jumlah_ya + $partai_values)) * (($p_dapil_ya + 1) / ($jumlah_ya + $dapil_values)) * (($p_kelamin_ya + 1) / ($jumlah_ya + 2)) * (($p_pendidikan_ya + 1) / ($jumlah_ya + 5)) * ($jumlah_ya / $jumlah);
+            $p_tidak_terpilih = (($p_partai_tidak + 1) / ($jumlah_tidak + $partai_values)) * (($p_dapil_tidak + 1) / ($jumlah_tidak + $dapil_values)) * (($p_kelamin_tidak + 1) / ($jumlah_tidak + 2)) * (($p_pendidikan_tidak + 1) / ($jumlah_tidak + 5)) * ($jumlah_tidak / $jumlah);
         }
         else{
-            $p_terpilih = ($p_partai_ya / $jumlah_ya) * ($p_dapil_ya / $jumlah_ya) * ($jumlah_ya / $jumlah);
-            $p_tidak_terpilih = ($p_partai_tidak / $jumlah_tidak) * ($p_dapil_tidak / $jumlah_tidak) * ($jumlah_tidak / $jumlah);
+            $p_terpilih = ($p_partai_ya / $jumlah_ya) * ($p_dapil_ya / $jumlah_ya) * ($p_kelamin_ya / $jumlah_ya) * ($p_pendidikan_ya / $jumlah_ya) * ($jumlah_ya / $jumlah);
+            $p_tidak_terpilih = ($p_partai_tidak / $jumlah_tidak) * ($p_dapil_tidak / $jumlah_tidak) * ($p_kelamin_tidak / $jumlah_tidak) * ($p_pendidikan_tidak / $jumlah_tidak) * ($jumlah_tidak / $jumlah);
         }
 
-        return $result = collect([number_format($p_terpilih, 5), number_format($p_tidak_terpilih, 5)]);
+        return $result = collect([$p_terpilih, $p_tidak_terpilih, $p_dapil_tidak, $p_partai_tidak, $p_kelamin_tidak, $p_pendidikan_tidak]);
     }
 
     public function age_count($date){
@@ -164,7 +168,6 @@ class DSSController extends Controller
                 $pengalaman = '>= 20 Tahun';
                 break;
         }
-
         return view('rekomendasi/detail', [
             'title' => 'Detail',
             'data' => $caleg,
