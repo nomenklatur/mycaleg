@@ -34,7 +34,7 @@ class DSSController extends Controller
                 'jenis_kelamin' => $item->jenis_kelamin,
                 'partai' => $item->party->nama,
                 'probability' => $this->naive_bayes_classifier($item),
-                'preference' => (($item->pendidikan / $max_pendidikan) * 40) + (($item->pengalaman / $max_pengalaman) * 25) + (($item->penghasilan / $max_penghasilan) * 10) + (($item->keanggotaan / $max_keanggotaan) * 20) + (($item->kekayaan / $max_kekayaan) * 5)
+                'preference' => (number_format(($item->pendidikan / $max_pendidikan), 2) * 40) + (number_format(($item->pengalaman / $max_pengalaman), 2) * 25) + (number_format(($item->penghasilan / $max_penghasilan),2) * 10) + (number_format(($item->keanggotaan / $max_keanggotaan),2) * 20) + (number_format(($item->kekayaan / $max_kekayaan),2) * 5)
             ]));
         }
 

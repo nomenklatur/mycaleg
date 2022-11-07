@@ -22,12 +22,12 @@ class Penganalisa extends Controller
         foreach ($caleg as $cal) {
             $matriks_normal->push(collect([
                 'nama' => $cal->nama,
-                'pendidikan' => $cal->pendidikan / $max_pendidikan,
-                'pengalaman' => $cal->pengalaman / $max_pengalaman, 
-                'penghasilan' => $cal->penghasilan / $max_penghasilan,
-                'kekayaan' => $cal->kekayaan / $max_kekayaan,
-                'keanggotaan' => $cal->keanggotaan / $max_keanggotaan,
-                'preference' => (($cal->pendidikan / $max_pendidikan) * 40) + (($cal->pengalaman / $max_pengalaman) * 25) + (($cal->penghasilan / $max_penghasilan) * 10) + (($cal->keanggotaan / $max_keanggotaan) * 20) + (($cal->kekayaan / $max_kekayaan) * 5)
+                'pendidikan' => number_format($cal->pendidikan / $max_pendidikan, 2),
+                'pengalaman' => number_format($cal->pengalaman / $max_pengalaman, 2), 
+                'penghasilan' => number_format($cal->penghasilan / $max_penghasilan, 2),
+                'kekayaan' => number_format($cal->kekayaan / $max_kekayaan, 2),
+                'keanggotaan' => number_format($cal->keanggotaan / $max_keanggotaan, 2),
+                'preference' => (number_format(($cal->pendidikan / $max_pendidikan), 2) * 40) + (number_format(($cal->pengalaman / $max_pengalaman), 2) * 25) + (number_format(($cal->penghasilan / $max_penghasilan),2) * 10) + (number_format(($cal->keanggotaan / $max_keanggotaan),2) * 20) + (number_format(($cal->kekayaan / $max_kekayaan),2) * 5)
             ]));
         }
 
