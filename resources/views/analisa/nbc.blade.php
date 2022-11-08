@@ -58,6 +58,32 @@
             <p>P(C2 | X) = ({{$nbc['X1C2']}} / {{$nbc['C2']}}) x ({{$nbc['X2C2']}} / {{$nbc['C2']}}) x ({{$nbc['X3C2']}} / {{$nbc['C2']}}) x ({{$nbc['X4C2']}} / {{$nbc['C2']}}) x ({{$nbc['C2']}} / {{$nbc['jlh_data']}})</p>
           @endif
           <p>P(C2 | X) = <b>{{$nbc['prob_tidak']}}</b></p>
+          <div>
+            <p>Berdasarkan hasil analisa klasifikasi dengan metode <i>Naive Bayes Classifier</i>, diketahui bahwa seorang calon legislatif berjenis kelamin <span class="text-warning fw-bolder">@if ($nbc['X4'] == 'P')
+                Perempuan
+            @else
+                Laki-laki
+            @endif</span> yang diusul
+               partai <span class="text-warning fw-bolder">{{$nbc['X1']}}</span>, dicalonkan pada daerah pemilihan <span class="text-warning fw-bolder">{{$nbc['X2']}}</span>,
+               dengan pendidikan terakhir <span class="text-warning fw-bolder">
+                @if ($nbc['X3'] == 1)
+                    SMA atau sederajat
+                @elseif ($nbc['X3'] == 2)
+                    Diploma
+                @elseif ($nbc['X3'] == 3)
+                    Sarjana
+                @elseif ($nbc['X3'] == 4)
+                    Magister
+                @elseif ($nbc['X4'] == 5)
+                    Doktor
+                @endif
+               </span> diprediksi akan @if ($nbc['prob_ya'] > $nbc['prob_tidak'])
+                  <span class="text-success fw-bolder">terpilih</span>   
+               @else
+                  <span class="text-danger fw-bolder">tidak terpilih</span>  
+               @endif
+            pada pemilihan legislatif</p>
+          </div>
         </div>
       </div>
     </div>
