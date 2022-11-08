@@ -21,7 +21,7 @@ class CalegFactory extends Factory
             'jenis_kelamin' => $this->faker->randomElement(['L', 'P']),
             'visi' => $this->faker->paragraph(3,5),
             'misi' => $this->faker->paragraph(4,6),
-            'dapil_id' => mt_rand(1,3),
+            'dapil_id' => $this->faker->randomElement([1, 3]),
             'party_id' => mt_rand(1,15),
             'pendidikan' => mt_rand(1,5),
             'penghasilan' => mt_rand(1,5),

@@ -16,7 +16,7 @@ class PartyController extends Controller
      */
     public function index()
     {
-        return view('partai', [
+        return view('partai/partai', [
             'title' => 'Partai',
             'parties' => Party::all()
         ]);

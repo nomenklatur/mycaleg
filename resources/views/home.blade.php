@@ -25,7 +25,7 @@
                         <img src="images/pemilu.png" alt="" class="img-fluid">
                     </div>
                     <div class="container mt-4">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam cum similique aperiam aliquam suscipit laboriosam et sint molestiae harum, modi reprehenderit, sit, perferendis animi sunt sed ut recusandae repudiandae totam nesciunt. Culpa quod fugiat iste ut hic tempore cupiditate nobis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae explicabo minus quidem nemo provident. Laborum saepe nobis autem doloremque iusto reprehenderit laudantium, repudiandae, rem obcaecati maxime sunt quia consequuntur ullam.</p>
+                        <p class="fs-5">Pemilihan Umum merupakan sarana demokrasi untuk mewujudkan system pemerintahan negara Indonesia yang berdaulat dan memiliki kedaulatan rakyat. Pemerintahan yang dibentuk melalui pemilihan umum sebenarnya berasal dari keinginan rakyat, kehendak rakyat dan untuk kesejahteraan rakyat itu sendiri. Adapun aturan yang mengatur tentang pemilu ini salah satunya ada di pasal 22E Undang-Undang Dasar Negara Republik Indonesia Tahun 1945. Yang dimana pemilu ini untuk memilih presiden dan wakilnya, anggota dewan perwakilan rakyat yang diselenggarakan berdasarkan asas langsung, umum, bebas, rahasia, jujur, dan adil setiap 5 tahun sekali.</p>
                     </div>
                 </div>
                 <div class="container mt-3">
