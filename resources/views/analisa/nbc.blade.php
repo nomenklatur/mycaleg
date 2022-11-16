@@ -74,7 +74,7 @@
                     Sarjana
                 @elseif ($nbc['X3'] == 4)
                     Magister
-                @elseif ($nbc['X4'] == 5)
+                @elseif ($nbc['X3'] == 5)
                     Doktor
                 @endif
                </span> diprediksi akan @if ($nbc['prob_ya'] > $nbc['prob_tidak'])
