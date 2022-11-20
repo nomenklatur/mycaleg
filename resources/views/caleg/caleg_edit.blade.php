@@ -154,7 +154,7 @@
                 @enderror
               </div>
               <div class="mb-3">
-                <label for="pengalaman" class="form-label">Lama di partai</label>
+                <label for="pengalaman" class="form-label">Pengalaman Politik</label>
                 <select class="form-select" name="pengalaman">
                   <option value="1" @if (1 == $caleg->pengalaman) selected @endif> < 5 Tahun</option>
                   <option value="2" @if (2 == $caleg->pengalaman) selected @endif>5 Tahun - 9 Tahun</option>

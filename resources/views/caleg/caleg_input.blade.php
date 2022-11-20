@@ -160,7 +160,7 @@
                 @enderror
               </div>
               <div class="mb-3">
-                <label for="pengalaman" class="form-label">Lama di partai</label>
+                <label for="pengalaman" class="form-label">Pengalaman Politik</label>
                 <select class="form-select" name="pengalaman">
                   <option value="0">Pilih rentang pengalaman politik</option>
                   <option value="1"> < 5 Tahun</option>
