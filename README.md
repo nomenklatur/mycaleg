@@ -20,7 +20,10 @@
 - move to project directory `$ cd <folder name>`
 - create a database called 'mycaleg'
 - run `$ composer install`
-- run `$ php artisan migrate:seed`
+- run `$ php artisan key:generate`
+- run `$ php artisan migrate`
+- run `$ php artisan db:seed`
+- run `$ php artisan serve`
 
 # Contact
 Created by [Dimas Eka Putra](https://www.linkedin.com/in/masdimasekaputra/) - feel free to reach out!
