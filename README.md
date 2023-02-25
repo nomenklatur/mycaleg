@@ -1,4 +1,5 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+![image](https://user-images.githubusercontent.com/88763669/221351834-d7885b8c-f8dd-41ba-9e18-19b444da3390.png)
+
 
 # My Caleg
 > This is a Laravel application created to help teenagers in Tebing Tinggi to elect parliament candidates in Tebing Tinggi
